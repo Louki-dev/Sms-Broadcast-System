@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" rel="stylesheet">
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <nav class="navbar shadow">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1"><a style="cursor: default;">C <b>L I N K </b> S</a></span>
+            <a class="text-light text-decoration-none float-end px-3" href="{% url 'admin' %}"><i class="fas fa-tv fa-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Dashboard"></i></a>
+        </div>
+    </nav>
+<section>
+
+<!-- alert success message -->
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading"><i class="fas fa-thumbs-up"></i> Success!</h4>
+            {{ message }}
+            <div class="close__button">
+                <span aria-label="Close" class="close-btn" data-bs-dismiss="alert" type="button"><i class="fas fa-times fa-lg"></i></span>
+            </div>
+        </div>
+        <script>
+             $('.close-btn').click(function(){
+               $('.alert').removeClass("show");
+               $('.alert').addClass("hide");
+             });
+        </script>
+    {% endfor %}
+{% endif %}
+
+    <!-- Other pages inserted here -->
+        {% block content %}
+
+        {% endblock %}
+
+</section>
+
+<!-- Modal Logout -->
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel2" class="modal fade" data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     id="staticBackdrop2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-white">
+                <h5 class="modal-title" id="staticBackdropLabel2">Confirm Exit</h5>
+                <button aria-label="Close" class="btn-close rounded-circle bg-light" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Back</button>
+                <a href="{% url 'logout' %}">
+                    <button class="btn btn-primary" type="submit">Yes</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'bootstrapbundleJs.html' %}
+{% else %}
+    {% include 'restriction.html' %}
+{% endif %}
+</body>
+</html>
+
+

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Open Sans', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  background: linear-gradient(#1a1a1a, #242424);
+  padding: 20px;
+  color: white;
+}
+
+.navbar b {
+    color: #127b8e;
+}
+
+.broadcast button {
+    border: none;
+    background-color: inherit;
+}
+.broadcast {
+    position: absolute;
+    top: 88%;
+    right: 5%;
+}
+.form-control:focus {
+    border-color: #127b8e;
+    box-shadow: none;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn-outline-primary {
+  border-color: #cecece;;
+  color: #000000;
+}
+
+.btn-outline-primary:hover {
+  background-color: #1692a8;
+  border-color: #127b8e;
+}
+
+.btn-outline-primary:focus {
+  background-color: #1692a8;
+  color: white;
+}
+.btn-outline-primary:link {
+  color: #127b8e;
+}
+.btn-primary {
+  background-color: #127b8e;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1692a8;
+}
+
+.btn-primary:focus {
+  background-color: #1692a8;
+}
+
+.nav-link{
+  color: #ffffff;
+}
+
+.nav-link:hover{
+  color: #ffffff;
+  transition: 200ms ease-in-out;
+}
+
+.nav-link:focus {
+  color: #ffff;
+}
+
+.card-header{
+  background: #127b8e;
+}
+
+
+small {
+  color: #1692a8;
+}
+
+.card-list {
+    text-align: left;
+}
+
+.text-center {
+  border-radius: 10px;
+}
+
+.container {
+    max-width: 550px;
+}
+
+.has-error label,
+.has-error input {
+    color: red;
+    border-color: red;
+}
+
+.list-unstyled li {
+    font-size: 13px;
+    padding: 4px 0 0;
+    color: red;
+}
+
+.form-check-input:focus {
+    border-color: #127b8e;
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: #127b8e;
+}
+
+.modal-header {
+    background: #127b8e;
+}
+
+.dropdown-item:focus {
+    background: #127b8e;
+    color: white;
+}
+
+.alert {
+  min-width: 420px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.alert-error{
+   min-width: 420px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 4px;
+  opacity: 1;
+}
+.close__button {
+    top: 30px;
+    right: 20px;
+    position: absolute;
+}

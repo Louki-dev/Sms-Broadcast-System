@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clinks | About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+<body>
+     <nav class="navbar shadow">
+        <div class="container">
+            <div class="container-fluid text-center">
+                <span class="navbar-brand mb-0 h1"><a href="{% url 'index' %}" class="text-white text-decoration-none">C <b>L I N K </b> S</a></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <section>
+
+    <div class="container">
+        <div class="card text-center shadow mb-5 mt-5">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+
+                </ul>
+            </div>
+
+            <div class="card-body text-start">
+            <h1>About</h1><hr>
+                <p>This web application is intended for private business and school offices. It is used to broadcast important announcements to the subscribers.</p>
+            <h1>Contacts</h1><hr>
+                <p>User's data from the 'contact form' will be stored in the database for the admins to monitor the number of users who joined the system</p>
+            <h1>Subscribers</h1><hr>
+                <p>Once the contact/user is active in the system, he or she may receive SMS notifications from the admin for important announcements.</p>
+            </div>
+
+        </div>
+    </div>
+    <br>
+</section>
+
+</body>
+</html>

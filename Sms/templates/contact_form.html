@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clinks | Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+<body>
+     <nav class="navbar shadow">
+        <div class="container">
+            <div class="container-fluid text-center">
+                <span class="navbar-brand mb-0 h1"><a style="cursor: default;">C <b>L I N K </b> S</a></span>
+            </div>
+        </div>
+    </nav>
+
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> Oh no!</h4>
+                   {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <section>
+
+    <div class="container">
+        <div class="card text-center shadow mb-5 mt-5">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" href="{% url 'contact_form' %}">Contact Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-disabled="true" style="cursor: not-allowed;" data-bs-toggle="tooltip" data-bs-placement="top" title="Subscribe"><i class="fas fa-hands-helping"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+            <form method="POST" action="{% url 'contact_form' %}" role="form" data-toggle="validator">
+                {% csrf_token %}
+            <div class="card-body text-start">
+                <div class="form-group mb-2 mt-2">
+                    <label class="mb-2">First Name</label>
+                    <input type="text" class="form-control" data-error="You must have a first name." name="contact_first_name" id="id_contact_first_name" placeholder="First Name" value="{{ contact_first_name }}" required>
+
+                    <!-- Error -->
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group mb-2 mt-2">
+                    <label class="mb-2">Last Name</label>
+                    <input type="text" class="form-control" data-error="You must have a last name." name="contact_last_name" id="id_contact_last_name" placeholder="Last Name" value="{{ contact_last_name }}" required>
+
+                    <!-- Error -->
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group mb-2 mt-2">
+                    <label class="mb-2">Mobile Number</label>
+                    <input type="text" class="form-control" name="contact_mobile_number" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Format (9123456789)"
+                           id="id_contact_mobile_number" value="{{ contact_mobile_number }}" placeholder="Mobile Number" required>
+
+                    <!-- Error -->
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group mb-2 mt-2">
+                    <label class="mb-2">Email</label>
+                    <input type="email" class="form-control"  name="contact_email" id="id_contact_email" value="{{ contact_email }}" placeholder="Email" required>
+
+                    <!-- Error -->
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button type="submit" class="btn btn-outline-primary mb-4 mt-4">Next</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <br>
+</section>
+{% include 'tooltips.html' %}
+</body>
+</html>

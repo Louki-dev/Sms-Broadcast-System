@@ -1,0 +1,126 @@
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#23242b, #0a4550, #23242b);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(#1a1a1a, #242424, #1a1a1a);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h5{
+  color: rgb(196, 196, 196);
+  text-align: left;
+  position: absolute;
+  top: 0;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(196, 196, 196);
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 2px;
+  background: linear-gradient(#272727, #242424);
+  border: none;
+}
+
+.login-box button:hover {
+  background: #1ab3ce;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #127b8e,
+              0 0 25px #127b8e,
+              0 0 50px #127b8e,
+              0 0 100px #127b8e;
+}
+
+.error_message p{
+  color: white;
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+.error_message {
+  border-style: solid;
+  border-color: rgb(153, 68, 68);
+  border-width: 1.8px;
+}
+
+b{
+    color: #127b8e;
+}
+span {
+    color: #fff;
+}
+
+.title {
+    text-align: center;
+    margin: 30px 0 40px;
+    font-size: 20px;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 350px;
+}
+
+.close:hover {
+  font-size: 18px;
+  transition: 200ms ease;
+}
